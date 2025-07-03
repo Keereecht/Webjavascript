@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pet Shop - ร้านขายสัตว์เลี้ยง</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #ff9966;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #ffcc99;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .banner {
+      background-image: url('https://images.unsplash.com/photo-1601758003122-58e3b3613b21?auto=format&fit=crop&w=1050&q=80');
+      background-size: cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+      font-size: 2em;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .product {
+      border: 1px solid #ddd;
+      padding: 15px;
+      text-align: center;
+    }
+    footer {
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ร้าน Pet Shop</h1>
+    <p>เพื่อนแท้ของสัตว์เลี้ยงทุกตัว</p>
+  </header>
+
+  <nav>
+    <a href="#">หน้าแรก</a>
+    <a href="#">สินค้า</a>
+    <a href="#">บริการ</a>
+    <a href="https://github.com/Keereecht/Webjavascript">ติดต่อเรา</a>
+  </nav>
+
+  <div class="banner">
+    ยินดีต้อนรับสู่โลกของสัตว์เลี้ยง
+  </div>
+
+  <section class="products">
+    <a href="/product?id=2" style="text-decoration: none; color: inherit;">
+    <div class="product">
+      <h3>อาหารสุนัข</h3>
+      <img src="https://via.placeholder.com/150" alt="Dog Food">
+      <p>อาหารสุนัขเกรดพรีเมียม</p>
+    </div>
+    </a>
+    <a href="/product?id=1" style="text-decoration: none; color: inherit;">
+    <div class="product">
+      <h3>อาหารแมว</h3>
+      <img src="https://via.placeholder.com/150" alt="Cat Food">
+      <p>เม็ดอาหารแมวสูตรครบถ้วน</p>
+    </div>
+    </a>
+    <div class="product">
+      <h3>ของเล่นสัตว์เลี้ยง</h3>
+      <img src="https://via.placeholder.com/150" alt="Toys">
+      <p>ของเล่นเสริมพัฒนาการ</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>📍 สาขาหลัก: ถนนสุขใจ 123 กรุงเทพฯ | โทร: 02-123-4567 | Line: @petshop</p>
+    <p>&copy; 2025 Pet Shop Thailand</p>
+  </footer>
+
+</body>
+</html>

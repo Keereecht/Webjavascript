@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>อาหารแมว - Pet Shop</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #fdfdfd;
+    }
+    h1 {
+      text-align: center;
+      color: #ff6699;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .product {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .product img {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      border-radius: 8px;
+    }
+    .product h3 {
+      margin-top: 10px;
+      font-size: 1.2em;
+      color: #333;
+    }
+    .price {
+      color: green;
+      font-size: 1.1em;
+      margin: 8px 0;
+    }
+    .product button {
+      margin-top: 8px;
+      padding: 8px 16px;
+      background-color: #ff6699;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .product button:hover {
+      background-color: #ff3366;
+    }
+  </style>
+</head>
+<body>
+<a href="/cart" style="display: inline-block; margin-bottom: 20px;">
+  <button style="
+    padding: 10px 20px;
+    background-color: #3399ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+  ">
+    🛒 ไปที่ตะกร้าสินค้า
+  </button>
+</a>
+  <h1>รายการอาหารแมว</h1>
+<div class="grid">
+
+  <div class="product">
+    <img src="https://via.placeholder.com/200x200?text=Me-O" alt="Me-O">
+    <h3>Me-O Tuna</h3>
+    <p>อาหารแมวรสปลาทูน่า สำหรับแมวโต</p>
+    <p class="price">฿129</p>
+    <button onclick="addToCart('Me-O Tuna', 129)">เพิ่มลงตะกร้า</button>
+  </div>
+
+  <div class="product">
+    <img src="https://via.placeholder.com/200x200?text=Whiskas" alt="Whiskas">
+    <h3>Whiskas Ocean Fish</h3>
+    <p>อาหารแมวแห้ง รสปลาทะเลรวม</p>
+    <p class="price">฿139</p>
+    <button onclick="addToCart('Whiskas Ocean Fish', 139)">เพิ่มลงตะกร้า</button>
+  </div>
+
+  <div class="product">
+    <img src="https://via.placeholder.com/200x200?text=SmartHeart" alt="SmartHeart">
+    <h3>SmartHeart Gold</h3>
+    <p>สูตรบำรุงขนและผิวหนัง สำหรับแมวโต</p>
+    <p class="price">฿159</p>
+    <button onclick="addToCart('SmartHeart Gold', 159)">เพิ่มลงตะกร้า</button>
+  </div>
+
+  <div class="product">
+    <img src="https://via.placeholder.com/200x200?text=Royal+Canin" alt="Royal Canin">
+    <h3>Royal Canin Indoor</h3>
+    <p>สูตรแมวเลี้ยงในบ้าน ลดกลิ่นอุจจาระ</p>
+    <p class="price">฿399</p>
+    <button onclick="addToCart('Royal Canin Indoor', 399)">เพิ่มลงตะกร้า</button>
+  </div>
+
+  <div class="product">
+    <img src="https://via.placeholder.com/200x200?text=Cataholic" alt="Cataholic">
+    <h3>Cataholic Chicken & Fish</h3>
+    <p>ขนมแมวอบแห้ง อร่อยเต็มคำ</p>
+    <p class="price">฿89</p>
+    <button onclick="addToCart('Cataholic Chicken & Fish', 89)">เพิ่มลงตะกร้า</button>
+  </div>
+
+</div>
+
+<!-- JavaScript -->
+<script>
+  function addToCart(name, price) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ name, price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`เพิ่ม ${name} ลงตะกร้าแล้ว`);
+  }
+</script>
+
+</body>
+</html>

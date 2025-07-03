@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ตะกร้าสินค้า</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 { color: #ff6699; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    .total {
+      text-align: right;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🛒 ตะกร้าสินค้าของคุณ</h1>
+
+  <table id="cart-table">
+    <thead>
+      <tr>
+        <th>สินค้า</th>
+        <th>ราคา</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="total" id="total"></div>
+
+  <button onclick="checkout()">✅ สั่งซื้อ</button>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const tbody = document.querySelector('#cart-table tbody');
+    let total = 0;
+
+    cart.forEach(item => {
+      const row = document.createElement('tr');
+      row.innerHTML = `<td>${item.name}</td><td>฿${item.price}</td>`;
+      tbody.appendChild(row);
+      total += item.price;
+    });
+
+    document.getElementById('total').textContent = `รวมทั้งสิ้น: ฿${total}`;
+
+    function checkout() {
+      if (cart.length === 0) {
+        alert("ยังไม่มีสินค้าในตะกร้า");
+        return;
+      }
+
+      alert("ขอบคุณที่สั่งซื้อ! ระบบจะติดต่อกลับทางอีเมล/ไลน์");
+      localStorage.removeItem('cart');
+      window.location.href = 'index.html'; // หรือกลับไปหน้าแรก
+    }
+  </script>
+
+</body>
+</html>
